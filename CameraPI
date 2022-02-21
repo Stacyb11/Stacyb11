@@ -1,0 +1,9 @@
+#include <librealsense2/rs.hpp> //include realsense cross platform PI
+
+
+rs2::pipeline p;
+p.start;
+
+rs2::frameset frames=p.wait_for_frames(): //blocks programm until usable frames arrive
+rs2::depth_frame depth=frames.get_depth_frame();
+
